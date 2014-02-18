@@ -1,0 +1,16 @@
+{
+    "contents" : "count <- function(cause = NULL) {\n  \n  valid_options <- c(\"asphyxiation\", \"blunt force\", \"other\", \"shooting\", \"stabbing\", \"unknown\")\n\n  ## Check that \"cause\" is non-NULL; else throw error\n  if (is.null(cause)) {\n    stop(\"Cause cannot be null.\")\n  }\n  \n  ## Check that specific \"cause\" is allowed; else throw error\n  if (!(cause %in% valid_options)){\n    stop(\"Cause not found in valid options.\")\n  }\n  \n  ## Read \"homicides.txt\" data file\n  homicides <- readLines(\"homicides.txt\")\n \n  ## Extract causes of death\n  i <- length(grep(paste(\"[cC]ause: \",\"[\",toupper(substring(cause, 1, 1)),tolower(substring(cause, 1, 1)),\"]\",substring(cause, 2), sep=\"\") , homicides))\n  \n  ## Return integer containing count of homicides for that cause\n  i\n}",
+    "created" : 1382028810344.000,
+    "dirty" : true,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2455277187",
+    "id" : "F5A9280B",
+    "lastKnownWriteTime" : 1382030595,
+    "path" : "~/data/code/data_analysis/hw4/count.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : true,
+    "type" : "r_source"
+}

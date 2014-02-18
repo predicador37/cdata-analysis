@@ -1,0 +1,16 @@
+{
+    "contents" : "getmonitor <- function(id, directory, summarize = FALSE) {\n  ## 'id' is a vector of length 1 indicating the monitor ID\n  ## number. The user can specify 'id' as either an integer, a\n  ## character, or a numeric.\n  \n  ## 'directory' is a character vector of length 1 indicating\n  ## the location of the CSV files\n  \n  ## 'summarize' is a logical indicating whether a summary of\n  ## the data should be printed to the console; the default is\n  ## FALSE\n  \n  data = read.csv(paste(directory,\"/\",formatC(id, width = 3, format = \"d\", flag = \"0\"),\".csv\",sep=\"\"))\n  \n  if (isTRUE(summarize)) {\n    summary(data)\n  }\n  \n  data\n  \n}",
+    "created" : 1380906440032.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3809679551",
+    "id" : "936444CF",
+    "lastKnownWriteTime" : 1380961052,
+    "path" : "~/data/code/hw2/getmonitor.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : true,
+    "type" : "r_source"
+}

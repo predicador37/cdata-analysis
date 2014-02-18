@@ -1,0 +1,16 @@
+{
+    "contents" : "complete <- function(directory, id = 1:332) {\n  ## 'directory' is a character vector of length 1 indicating\n  ## the location of the CSV files\n  \n  ## 'id' is an integer vector indicating the monitor ID numbers\n  ## to be used\n  \n  ## Return a data frame of the form:\n  ## id nobs\n  ## 1  117\n  ## 2  1041\n  ## ...\n  ## where 'id' is the monitor ID number and 'nobs' is the\n  ## number of complete cases\n  \n  #data <- data.frame(id=id, nobs= numeric(length(id)))\n  \n  nobs <- vector()\n  \n  j=1\n  \n  for (i in id) {\n    file <- read.csv(paste(directory,\"/\",formatC(i, width = 3, format = \"d\", flag = \"0\"),\".csv\",sep=\"\"))\n    nobs[j] <- sum(complete.cases(file))\n    j <- j+1\n  }\n \n  data = data.frame(id, nobs)\n  data\n}\n",
+    "created" : 1380908626562.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3748326154",
+    "id" : "CABCA420",
+    "lastKnownWriteTime" : 1380961287,
+    "path" : "~/data/code/hw2/complete.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : true,
+    "type" : "r_source"
+}

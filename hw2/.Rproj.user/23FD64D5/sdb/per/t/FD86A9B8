@@ -1,0 +1,16 @@
+{
+    "contents" : "corr <- function(directory, threshold = 0) {\n  ## 'directory' is a character vector of length 1 indicating\n  ## the location of the CSV files\n  \n  ## 'threshold' is a numeric vector of length 1 indicating the\n  ## number of completely observed observations (on all\n  ## variables) required to compute the correlation between\n  ## nitrate and sulfate; the default is 0\n  \n  ## Return a numeric vector of correlations\n \n  cr <- vector()\n  j=1\n  \n  filenames <- list.files(directory, pattern=\"*.csv\", full.names=TRUE)\n  datasets <- lapply(filenames, read.csv)\n  \n  for (dataset in datasets){ \n    if (sum(complete.cases(dataset)) > threshold){\n     \n    cr[j]=cor(dataset[,c(\"sulfate\")],dataset[,c(\"nitrate\")],use=\"complete.obs\")\n    j <- j+1\n    }\n    \n    if(length(cr)==0) {\n      cr = numeric(0)\n    }\n    \n  }\n  \n cr\n \n}",
+    "created" : 1380961345747.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "698407510",
+    "id" : "FD86A9B8",
+    "lastKnownWriteTime" : 1380966683,
+    "path" : "~/data/code/hw2/corr.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : true,
+    "type" : "r_source"
+}

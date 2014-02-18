@@ -1,0 +1,16 @@
+{
+    "contents" : "agecount <- function(age = NULL) {\n  ## Check that \"age\" is non-NULL; else throw error\n  if (is.null(cause)) {\n    stop(\"Age cannot be NULL.\")\n  }\n  ## Read \"homicides.txt\" data file\n  homicides <- readLines(\"homicides.txt\")\n  ## Extract ages of victims; ignore records where no age is\n  ## given\n  i <- length(grep(paste(\"\", as.character(age), \"years old\") , homicides))\n  ## Return integer containing count of homicides for that age\n  i\n}",
+    "created" : 1382030449932.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "536881283",
+    "id" : "6ED13BB",
+    "lastKnownWriteTime" : 1382030877,
+    "path" : "~/data/code/data_analysis/hw4/agecount.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : true,
+    "type" : "r_source"
+}
